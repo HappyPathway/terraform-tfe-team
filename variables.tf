@@ -36,3 +36,9 @@ variable "tfe_projects" {
   }))
   default = []
 }
+
+variable "create_team" {
+  description = "Whether to create a team"
+  type        = bool
+  default     = false
+}
