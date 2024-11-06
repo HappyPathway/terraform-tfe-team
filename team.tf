@@ -11,7 +11,7 @@ data "tfe_team" "team" {
 }
 
 locals {
-  tfe_team = var.create_team ? tfe_team.team : data.tfe_team.team
+  tfe_team = var.create_team ? one(tfe_team.team) : one(data.tfe_team.team)
 }
 
 resource "tfe_team_token" "team_token" {
