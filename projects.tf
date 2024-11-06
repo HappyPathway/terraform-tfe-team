@@ -8,8 +8,8 @@ data "tfe_project" "projects" {
 # Resource block to set team access for each project
 resource "tfe_team_project_access" "team_project_access" {
   for_each   = tomap({ for project in var.tfe_projects : project.name => project.access_level }) # Map project names to their access levels
-  team_id    = lookup(data.tfe_project.project, each.key).id                                     # Lookup the team ID based on the project name
-  project_id = data.tfe_project.projects.id                                                      # Set the project ID
+  team_id    = local.tfe_team.id                                                                 # Lookup the team ID based on the project name
+  project_id = lookup(data.tfe_project.project, each.key).id                                     # Set the project ID
   access     = each.value                                                                        # Set the access level for the team
 }
 

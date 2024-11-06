@@ -9,7 +9,7 @@ data "tfe_workspace" "workspaces" {
 resource "tfe_team_access" "workspaces" {
   for_each     = tomap({ for workspace in var.tfe_workspaces : workspace.name => workspace.access_level }) # Map workspace names to their access levels
   access       = each.value                                                                                # Set the access level for the team
-  team_id      = local.team.id                                                                          # Lookup the team ID based on the workspace name
+  team_id      = local.tfee_team.id                                                                        # Lookup the team ID based on the workspace name
   workspace_id = lookup(data.tfe_workspace.workspaces, each.key).id                                        # Set the workspace ID (assuming `tfe_workspace.test` is defined elsewhere)
 }
 
