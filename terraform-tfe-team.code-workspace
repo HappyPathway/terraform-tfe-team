@@ -4,10 +4,12 @@
 			"path": "."
 		},
 		{
-			"path": "../terraform-provider-tfe/website/docs/r"
+			"path": "../terraform-provider-tfe/website/docs/r",
+			"name": "docs/resources"
 		},
 		{
-			"path": "../terraform-provider-tfe/website/docs/d"
+			"path": "../terraform-provider-tfe/website/docs/d",
+			"name": "docs/data-sources"
 		}
 	],
 	"settings": {},
