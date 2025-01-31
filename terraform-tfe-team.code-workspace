@@ -1,0 +1,42 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../terraform-provider-tfe/website/docs/r"
+		},
+		{
+			"path": "../terraform-provider-tfe/website/docs/d"
+		}
+	],
+	"settings": {},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "terraform-plan",
+				"type": "shell",
+				"command": "Terraform Plan",
+				"runOptions": {
+					"runOn": "default"
+				},
+				"osx": {
+					"command": "terraform plan",
+					"options": {
+						"cwd": "${workspaceFolder}"
+					}
+				},
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": true,
+					"panel": "new",
+					"showReuseMessage": false,
+					"clear": false
+				}
+
+			}
+		]
+	}
+}
