@@ -17,14 +17,20 @@
 		"version": "2.0.0",
 		"tasks": [
 			{
-				"label": "terraform-plan",
+				"label": "tf-checkout",
 				"type": "shell",
-				"command": "Terraform Plan",
+				"command": "tf-checkout",
 				"runOptions": {
 					"runOn": "default"
 				},
 				"osx": {
-					"command": "terraform plan",
+					"command": "./scripts/tf-checkout",
+					"options": {
+						"cwd": "${workspaceFolder}"
+					}
+				},
+				"linux": {
+					"command": "./scripts/tf-checkout",
 					"options": {
 						"cwd": "${workspaceFolder}"
 					}
@@ -33,11 +39,11 @@
 					"echo": true,
 					"reveal": "always",
 					"focus": true,
-					"panel": "new",
+					"panel": "shared",
 					"showReuseMessage": false,
-					"clear": false
-				}
-
+					"clear": true
+				},
+				"problemMatcher": []
 			}
 		]
 	}
