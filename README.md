@@ -68,4 +68,4 @@ The `examples/basic_usage` directory contains a basic example configuration for 
 
 ### Advanced Usage
 
-The `examples/advanced_usage` directory contains an advanced example configuration for using the module. It provides an example of managing team access to TFE projects and workspaces.
+The `examples/advanced_usage` directory contains an advanced example configuration for using the module. It provides an example of managing team access to TFE projects and workspaces, including the `workspace_access` and `project_access` attributes.
