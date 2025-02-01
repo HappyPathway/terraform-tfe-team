@@ -57,3 +57,15 @@ Terraform module for creating a team and team token for TFE
 | <a name="output_team_id"></a> [team\_id](#output\_team\_id) | The ID of the created team |
 | <a name="output_workspaces"></a> [workspaces](#output\_workspaces) | Output block to output the fetched workspaces |
 <!-- END_TF_DOCS -->
+
+## Examples
+
+This repository contains example configurations to help you understand how to use this module. You can find these examples in the `examples` directory.
+
+### Basic Usage
+
+The `examples/basic_usage` directory contains a basic example configuration for using the module. It provides a simple example of creating a team and assigning workspaces.
+
+### Advanced Usage
+
+The `examples/advanced_usage` directory contains an advanced example configuration for using the module. It provides an example of managing team access to TFE projects and workspaces.
