@@ -12,8 +12,8 @@ Terraform module for creating a team and team token for TFE
 
 | Name | Version |
 |------|---------|
-| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | n/a |
-| <a name="provider_vault"></a> [vault](#provider\_vault) | ~> 3.4 |
+| <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.63.0 |
+| <a name="provider_vault"></a> [vault](#provider\_vault) | 3.25.0 |
 
 ## Modules
 
@@ -43,7 +43,7 @@ Terraform module for creating a team and team token for TFE
 | <a name="input_organization"></a> [organization](#input\_organization) | The name of the organization | `string` | n/a | yes |
 | <a name="input_team_members"></a> [team\_members](#input\_team\_members) | A list of usernames to add to the team | `list(string)` | `[]` | no |
 | <a name="input_team_name"></a> [team\_name](#input\_team\_name) | The name of the team | `string` | n/a | yes |
-| <a name="input_tfe_projects"></a> [tfe\_projects](#input\_tfe\_projects) | A list of projects to create | <pre>list(object({<br>    name                  = string<br>    access_level          = string<br>    workspace_permissions = optional(string, "read")<br>    inherit_permissions   = optional(bool, true)<br>  }))</pre> | `[]` | no |
+| <a name="input_tfe_projects"></a> [tfe\_projects](#input\_tfe\_projects) | List of TFE projects with their access levels and custom permissions | <pre>list(object({<br>    name         = string<br>    access_level = string<br>    project_access = optional(object({<br>      settings = optional(string, "read")<br>      teams    = optional(string, "none")<br>    }), null)<br>    workspace_access = optional(object({<br>      state_versions = optional(string, "none")<br>      sentinel_mocks = optional(string, "none")<br>      runs           = optional(string, "read")<br>      variables      = optional(string, "none")<br>      create         = optional(bool, false)<br>      locking        = optional(bool, false)<br>      move           = optional(bool, false)<br>      delete         = optional(bool, false)<br>      run_tasks      = optional(bool, false)<br>    }), null)<br>  }))</pre> | `[]` | no |
 | <a name="input_tfe_workspaces"></a> [tfe\_workspaces](#input\_tfe\_workspaces) | A list of workspaces to create | <pre>list(object({<br>    name         = string<br>    access_level = string<br>  }))</pre> | `[]` | no |
 | <a name="input_token_name"></a> [token\_name](#input\_token\_name) | The name of the token to be stored in Vault | `string` | `"token"` | no |
 | <a name="input_vault_secret_path"></a> [vault\_secret\_path](#input\_vault\_secret\_path) | The path in Vault where the team token will be stored | `string` | n/a | yes |
