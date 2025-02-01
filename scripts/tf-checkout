@@ -2,6 +2,7 @@
 import subprocess
 import shutil
 import os
+import json
 
 def run_command(command):
     print(f"Running command: {command}")
@@ -69,6 +70,11 @@ def main():
         repo_url = f"https://github.com/{vendor}/terraform-provider-{provider_name}.git"
         print(f"Processing provider: {provider_name}, version: {version}")
         git_pull_and_checkout(repo_url, base_dir, version)
+    return provider_versions
 
 if __name__ == "__main__":
-    main()
+    provider_versions = main()
+    print("all done checkout and pull")
+    # pretty print provider versions
+    print(json.dumps(provider_versions, sort_keys=True, separators=(',', ':'), indent=4))
+``
