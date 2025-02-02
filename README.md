@@ -52,10 +52,10 @@ Terraform module for creating a team and team token for TFE
 
 | Name | Description |
 |------|-------------|
-| <a name="output_project_workspaces"></a> [project\_workspaces](#output\_project\_workspaces) | n/a |
-| <a name="output_projects"></a> [projects](#output\_projects) | Output block to output the fetched projects |
-| <a name="output_team_id"></a> [team\_id](#output\_team\_id) | The ID of the created team |
-| <a name="output_workspaces"></a> [workspaces](#output\_workspaces) | Output block to output the fetched workspaces |
+| <a name="output_project_workspaces"></a> [project\_workspaces](#output\_project\_workspaces) | The list of workspaces associated with each project |
+| <a name="output_projects"></a> [projects](#output\_projects) | The list of projects assigned to the team |
+| <a name="output_team_id"></a> [team\_id](#output\_team\_id) | The unique identifier of the created team |
+| <a name="output_workspaces"></a> [workspaces](#output\_workspaces) | The list of workspaces assigned to the team |
 <!-- END_TF_DOCS -->
 
 ## Examples
